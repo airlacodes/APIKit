@@ -10,6 +10,16 @@
 		5C5140D722B6E4990072C98E /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5140CD22B6E4980072C98E /* APIKit.framework */; };
 		5C5140DC22B6E4990072C98E /* APIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140DB22B6E4990072C98E /* APIKitTests.swift */; };
 		5C5140DE22B6E4990072C98E /* APIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5140D022B6E4990072C98E /* APIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C5140E822B6E5440072C98E /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140E722B6E5440072C98E /* Interactor.swift */; };
+		5C5140EA22B6EBB90072C98E /* APIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140E922B6EBB90072C98E /* APIInteractor.swift */; };
+		5C5140ED22B6EC220072C98E /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140EC22B6EC220072C98E /* RequestSender.swift */; };
+		5C5140EF22B6EC4D0072C98E /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140EE22B6EC4D0072C98E /* APIEndpoint.swift */; };
+		5C5140F122B6EC930072C98E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F022B6EC930072C98E /* HTTPMethod.swift */; };
+		5C5140F322B6EF630072C98E /* SomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F222B6EF630072C98E /* SomeModel.swift */; };
+		5C5140F622B6EFF00072C98E /* HTTPRequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F522B6EFF00072C98E /* HTTPRequestSender.swift */; };
+		5C5140F822B702CB0072C98E /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F722B702CB0072C98E /* Package.swift */; };
+		5C5140FA22B7034C0072C98E /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F922B7034C0072C98E /* APIModel.swift */; };
+		5C5140FC22B703C30072C98E /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140FB22B703C30072C98E /* Demo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +39,16 @@
 		5C5140D622B6E4990072C98E /* APIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5140DB22B6E4990072C98E /* APIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKitTests.swift; sourceTree = "<group>"; };
 		5C5140DD22B6E4990072C98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C5140E722B6E5440072C98E /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		5C5140E922B6EBB90072C98E /* APIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractor.swift; sourceTree = "<group>"; };
+		5C5140EC22B6EC220072C98E /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
+		5C5140EE22B6EC4D0072C98E /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		5C5140F022B6EC930072C98E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5C5140F222B6EF630072C98E /* SomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeModel.swift; sourceTree = "<group>"; };
+		5C5140F522B6EFF00072C98E /* HTTPRequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestSender.swift; sourceTree = "<group>"; };
+		5C5140F722B702CB0072C98E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		5C5140F922B7034C0072C98E /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		5C5140FB22B703C30072C98E /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +91,15 @@
 		5C5140CF22B6E4980072C98E /* APIKit */ = {
 			isa = PBXGroup;
 			children = (
+				5C5140FB22B703C30072C98E /* Demo.swift */,
 				5C5140D022B6E4990072C98E /* APIKit.h */,
 				5C5140D122B6E4990072C98E /* Info.plist */,
+				5C5140E722B6E5440072C98E /* Interactor.swift */,
+				5C5140E922B6EBB90072C98E /* APIInteractor.swift */,
+				5C5140F922B7034C0072C98E /* APIModel.swift */,
+				5C5140EE22B6EC4D0072C98E /* APIEndpoint.swift */,
+				5C5140F722B702CB0072C98E /* Package.swift */,
+				5C5140EB22B6EC0E0072C98E /* Internal */,
 			);
 			path = APIKit;
 			sourceTree = "<group>";
@@ -84,6 +111,17 @@
 				5C5140DD22B6E4990072C98E /* Info.plist */,
 			);
 			path = APIKitTests;
+			sourceTree = "<group>";
+		};
+		5C5140EB22B6EC0E0072C98E /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				5C5140EC22B6EC220072C98E /* RequestSender.swift */,
+				5C5140F222B6EF630072C98E /* SomeModel.swift */,
+				5C5140F022B6EC930072C98E /* HTTPMethod.swift */,
+				5C5140F522B6EFF00072C98E /* HTTPRequestSender.swift */,
+			);
+			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +186,7 @@
 				TargetAttributes = {
 					5C5140CC22B6E4980072C98E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					5C5140D522B6E4990072C98E = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +233,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5140EA22B6EBB90072C98E /* APIInteractor.swift in Sources */,
+				5C5140FA22B7034C0072C98E /* APIModel.swift in Sources */,
+				5C5140F322B6EF630072C98E /* SomeModel.swift in Sources */,
+				5C5140E822B6E5440072C98E /* Interactor.swift in Sources */,
+				5C5140F122B6EC930072C98E /* HTTPMethod.swift in Sources */,
+				5C5140F822B702CB0072C98E /* Package.swift in Sources */,
+				5C5140FC22B703C30072C98E /* Demo.swift in Sources */,
+				5C5140ED22B6EC220072C98E /* RequestSender.swift in Sources */,
+				5C5140EF22B6EC4D0072C98E /* APIEndpoint.swift in Sources */,
+				5C5140F622B6EFF00072C98E /* HTTPRequestSender.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +390,7 @@
 		5C5140E222B6E4990072C98E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -357,6 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.airlatech..APIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +416,7 @@
 		5C5140E322B6E4990072C98E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +441,7 @@
 		5C5140E522B6E4990072C98E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = APIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -406,6 +459,7 @@
 		5C5140E622B6E4990072C98E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = APIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
