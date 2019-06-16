@@ -18,9 +18,8 @@ class Demo {
 
         let apiCall = APICall<SomeModel>(payload: payload)
 
-        apiCall.execute(callback: { response in
+        apiCall.execute { response in
             print(response.string)
-        })
-
+        }
     }
 }
