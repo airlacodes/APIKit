@@ -1,5 +1,5 @@
 //
-//  Interactor.swift
+//  Call.swift
 //  APIKit
 //
 //  Created by Jeevan Thandi on 16/06/2019.
@@ -8,21 +8,21 @@
 
 import Foundation
 
-final class APIInteractor<Response: APIModel>: Interactor {
+class APICall<Response: APIModel>: Call {
     typealias ResponseType = Response
 
 
     private let request: RequestSender
-    private let package: Package<Response>
+    private let payload: Payload
 
     init(requestSender: RequestSender = HTTPRequestSender(),
-         package: Package<Response>) {
+         payload: Payload) {
         self.request = requestSender
-        self.package = package
+        self.payload = payload
     }
 
     func execute(callback: @escaping (ResponseType) -> Void) {
-        request.request(payload: package.payload, endpoint: package.endpoint, callback: { response in
+        request.request(payload: payload, callback: { response in
             guard let res = response.decode(ofType: Response.self) else {
                 return
             }

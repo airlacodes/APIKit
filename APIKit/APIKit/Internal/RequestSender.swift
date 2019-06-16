@@ -9,8 +9,7 @@
 import Foundation
 
 protocol RequestSender {
-    func request(payload: APIModel?,
-                 endpoint: APIEndpoint,
+    func request(payload: Payload,
                  callback: @escaping (HttpResponse) -> Void)
     func cancelNetworkRequest()
 }

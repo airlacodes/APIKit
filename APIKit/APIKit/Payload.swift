@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class Package<Response: APIModel> {
-    let payload: APIModel
+public class Payload {
+    let body: APIModel
     let endpoint: APIEndpoint
 
-    init(payload: APIModel,
+    init(body: APIModel,
          endpoint: APIEndpoint) {
-        self.payload = payload
+        self.body = body
         self.endpoint = endpoint
     }
 }

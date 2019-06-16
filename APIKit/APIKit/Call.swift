@@ -1,5 +1,5 @@
 //
-//  Interactor.swift
+//  Call.swift
 //  APIKit
 //
 //  Created by Jeevan Thandi on 16/06/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Interactor {
+public protocol Call {
     associatedtype ResponseType
     func execute(callback: @escaping (ResponseType) -> Void)
     func cancel()

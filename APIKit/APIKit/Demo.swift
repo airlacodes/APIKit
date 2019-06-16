@@ -12,13 +12,13 @@ class Demo {
 
     func some() {
 
-        let payload = SomeModel(string: "me")
+        let requestBody = SomeModel(string: "me")
         let endpoint = APIEndpoint.custom(path: "/some", method: .post)
-        let package = Package<SomeModel>(payload: payload, endpoint: endpoint)
+        let payload = Payload(body: requestBody, endpoint: endpoint)
 
-        let interactor = APIInteractor<SomeModel>(package: package)
+        let apiCall = APICall<SomeModel>(payload: payload)
 
-        interactor.execute(callback: { response in
+        apiCall.execute(callback: { response in
             print(response.string)
         })
 
