@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol Call {
-    associatedtype ResponseType
-    func execute(callback: @escaping (ResponseType) -> Void)
+    associatedtype ResponseType: APIModel
+    func execute(callback: @escaping (Result<ResponseType, APIError>) -> Void)
     func cancel()
 }

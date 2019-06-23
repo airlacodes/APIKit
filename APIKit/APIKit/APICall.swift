@@ -11,7 +11,6 @@ import Foundation
 class APICall<Response: APIModel>: Call {
     typealias ResponseType = Response
 
-
     private let request: RequestSender
     private let payload: Payload
 
@@ -21,12 +20,12 @@ class APICall<Response: APIModel>: Call {
         self.payload = payload
     }
 
-    func execute(callback: @escaping (ResponseType) -> Void) {
+    func execute(callback: @escaping (Result<ResponseType, APIError>) -> Void) {
         request.request(payload: payload, callback: { response in
             guard let res = response.decode(ofType: Response.self) else {
                 return
             }
-            callback(res)
+            callback(Result.success(value: res))
         })
     }
 

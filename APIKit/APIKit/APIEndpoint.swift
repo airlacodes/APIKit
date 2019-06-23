@@ -25,7 +25,7 @@ enum APIEndpoint {
     private var relativePath: String {
         switch self {
         case .poem:
-            return "/quotes/availability"
+            return ""
         case .custom(let path, _):
             return path
         }

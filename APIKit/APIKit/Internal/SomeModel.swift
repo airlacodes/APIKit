@@ -10,9 +10,9 @@ import Foundation
 
 struct SomeModel: APIModel {
 
-    let string: String
+    let someProperty: String
 }
 
 struct SomeResponse: APIModel {
-    let data: Int
+    let someProperty: Int
 }

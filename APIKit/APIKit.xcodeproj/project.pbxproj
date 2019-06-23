@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C43090C22BF80CD00397436 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43090B22BF80CD00397436 /* APIError.swift */; };
+		5C43090E22BF81A900397436 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43090D22BF81A900397436 /* Result.swift */; };
 		5C5140D722B6E4990072C98E /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5140CD22B6E4980072C98E /* APIKit.framework */; };
 		5C5140DC22B6E4990072C98E /* APIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140DB22B6E4990072C98E /* APIKitTests.swift */; };
 		5C5140DE22B6E4990072C98E /* APIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5140D022B6E4990072C98E /* APIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C43090B22BF80CD00397436 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		5C43090D22BF81A900397436 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5C5140CD22B6E4980072C98E /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5140D022B6E4990072C98E /* APIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKit.h; sourceTree = "<group>"; };
 		5C5140D122B6E4990072C98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,8 +104,10 @@
 				5C5140E922B6EBB90072C98E /* APICall.swift */,
 				5C5140FD22B707AC0072C98E /* APIObserver.swift */,
 				5C5140F922B7034C0072C98E /* APIModel.swift */,
+				5C43090B22BF80CD00397436 /* APIError.swift */,
 				5C5140EE22B6EC4D0072C98E /* APIEndpoint.swift */,
 				5C5140F722B702CB0072C98E /* Payload.swift */,
+				5C43090D22BF81A900397436 /* Result.swift */,
 				5C5140EB22B6EC0E0072C98E /* Internal */,
 			);
 			path = APIKit;
@@ -237,10 +243,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5140EA22B6EBB90072C98E /* APICall.swift in Sources */,
+				5C43090E22BF81A900397436 /* Result.swift in Sources */,
 				5C5140FA22B7034C0072C98E /* APIModel.swift in Sources */,
 				5C5140F322B6EF630072C98E /* SomeModel.swift in Sources */,
 				5C5140E822B6E5440072C98E /* Call.swift in Sources */,
 				5C5140F122B6EC930072C98E /* HTTPMethod.swift in Sources */,
+				5C43090C22BF80CD00397436 /* APIError.swift in Sources */,
 				5C5140F822B702CB0072C98E /* Payload.swift in Sources */,
 				5C5140FE22B707AC0072C98E /* APIObserver.swift in Sources */,
 				5C5140FC22B703C30072C98E /* Demo.swift in Sources */,

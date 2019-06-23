@@ -12,14 +12,17 @@ class Demo {
 
     func some() {
 
-        let requestBody = SomeModel(string: "me")
+        let requestBody = SomeModel(someProperty: "abc")
         let endpoint = APIEndpoint.custom(path: "/some", method: .post)
         let payload = Payload(body: requestBody, endpoint: endpoint)
 
-        let apiCall = APICall<SomeModel>(payload: payload)
+        let apiCall = APICall<SomeResponse>(payload: payload)
 
-        apiCall.execute { response in
-            print(response.string)
+        apiCall.execute { result in
+            switch result {
+            case .success(let val): print(val)
+            case .failure(let error): print(error)
+            }
         }
     }
 }
