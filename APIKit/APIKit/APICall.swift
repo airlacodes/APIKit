@@ -29,7 +29,8 @@ class APICall<Response: APIModel>: Call {
         })
     }
 
-    func cancel() {
-        request.cancelNetworkRequest()
+    func observable(pollTime: Int) -> Observable<ResponseType> {
+        // let observerId = payload.hashValue (to keep unique observers and not return duplicate ones) ?
+        return Observable(payload: self.payload, pollTime: 5)
     }
 }

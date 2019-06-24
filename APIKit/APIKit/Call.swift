@@ -10,6 +10,6 @@ import Foundation
 
 public protocol Call {
     associatedtype ResponseType: APIModel
-    func execute(callback: @escaping (Result<ResponseType, APIError>) -> Void)
-    func cancel()
+    func execute(callback: @escaping APIKitCallback<ResponseType>)
+    func observable(pollTime: Int) -> Observable<ResponseType>
 }

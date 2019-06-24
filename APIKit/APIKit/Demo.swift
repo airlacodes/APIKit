@@ -10,6 +10,7 @@ import Foundation
 
 class Demo {
 
+
     func some() {
 
         let requestBody = SomeModel(someProperty: "abc")
@@ -24,5 +25,9 @@ class Demo {
             case .failure(let error): print(error)
             }
         }
+
+        
     }
+
+
 }

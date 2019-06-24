@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C43090C22BF80CD00397436 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43090B22BF80CD00397436 /* APIError.swift */; };
 		5C43090E22BF81A900397436 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43090D22BF81A900397436 /* Result.swift */; };
+		5C43091022BF8FB800397436 /* APIKitCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43090F22BF8FB800397436 /* APIKitCallback.swift */; };
+		5C43091222BF94E200397436 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43091122BF94E200397436 /* Observable.swift */; };
 		5C5140D722B6E4990072C98E /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5140CD22B6E4980072C98E /* APIKit.framework */; };
 		5C5140DC22B6E4990072C98E /* APIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140DB22B6E4990072C98E /* APIKitTests.swift */; };
 		5C5140DE22B6E4990072C98E /* APIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5140D022B6E4990072C98E /* APIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -22,7 +24,6 @@
 		5C5140F822B702CB0072C98E /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F722B702CB0072C98E /* Payload.swift */; };
 		5C5140FA22B7034C0072C98E /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F922B7034C0072C98E /* APIModel.swift */; };
 		5C5140FC22B703C30072C98E /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140FB22B703C30072C98E /* Demo.swift */; };
-		5C5140FE22B707AC0072C98E /* APIObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140FD22B707AC0072C98E /* APIObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,11 +34,27 @@
 			remoteGlobalIDString = 5C5140CC22B6E4980072C98E;
 			remoteInfo = APIKit;
 		};
+		5CDA0D8722C17751001FBC44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5CDA0D6822C17750001FBC44;
+			remoteInfo = TestAPIKit;
+		};
+		5CDA0D8922C17751001FBC44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5CDA0D7122C17750001FBC44;
+			remoteInfo = TestAPIKitTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5C43090B22BF80CD00397436 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5C43090D22BF81A900397436 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		5C43090F22BF8FB800397436 /* APIKitCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKitCallback.swift; sourceTree = "<group>"; };
+		5C43091122BF94E200397436 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		5C5140CD22B6E4980072C98E /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5140D022B6E4990072C98E /* APIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKit.h; sourceTree = "<group>"; };
 		5C5140D122B6E4990072C98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,7 +71,7 @@
 		5C5140F722B702CB0072C98E /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		5C5140F922B7034C0072C98E /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		5C5140FB22B703C30072C98E /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
-		5C5140FD22B707AC0072C98E /* APIObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIObserver.swift; sourceTree = "<group>"; };
+		5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TestAPIKit.xcodeproj; path = ../../TestAPIKit/TestAPIKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +96,7 @@
 		5C5140C322B6E4980072C98E = {
 			isa = PBXGroup;
 			children = (
+				5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */,
 				5C5140CF22B6E4980072C98E /* APIKit */,
 				5C5140DA22B6E4990072C98E /* APIKitTests */,
 				5C5140CE22B6E4980072C98E /* Products */,
@@ -101,8 +119,9 @@
 				5C5140D022B6E4990072C98E /* APIKit.h */,
 				5C5140D122B6E4990072C98E /* Info.plist */,
 				5C5140E722B6E5440072C98E /* Call.swift */,
+				5C43090F22BF8FB800397436 /* APIKitCallback.swift */,
 				5C5140E922B6EBB90072C98E /* APICall.swift */,
-				5C5140FD22B707AC0072C98E /* APIObserver.swift */,
+				5C43091122BF94E200397436 /* Observable.swift */,
 				5C5140F922B7034C0072C98E /* APIModel.swift */,
 				5C43090B22BF80CD00397436 /* APIError.swift */,
 				5C5140EE22B6EC4D0072C98E /* APIEndpoint.swift */,
@@ -131,6 +150,15 @@
 				5C5140F522B6EFF00072C98E /* HTTPRequestSender.swift */,
 			);
 			path = Internal;
+			sourceTree = "<group>";
+		};
+		5CDA0D8322C17750001FBC44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CDA0D8822C17751001FBC44 /* TestAPIKit.framework */,
+				5CDA0D8A22C17751001FBC44 /* TestAPIKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +240,12 @@
 			mainGroup = 5C5140C322B6E4980072C98E;
 			productRefGroup = 5C5140CE22B6E4980072C98E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5CDA0D8322C17750001FBC44 /* Products */;
+					ProjectRef = 5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5C5140CC22B6E4980072C98E /* APIKit */,
@@ -219,6 +253,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5CDA0D8822C17751001FBC44 /* TestAPIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TestAPIKit.framework;
+			remoteRef = 5CDA0D8722C17751001FBC44 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5CDA0D8A22C17751001FBC44 /* TestAPIKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TestAPIKitTests.xctest;
+			remoteRef = 5CDA0D8922C17751001FBC44 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5C5140CB22B6E4980072C98E /* Resources */ = {
@@ -250,8 +301,9 @@
 				5C5140F122B6EC930072C98E /* HTTPMethod.swift in Sources */,
 				5C43090C22BF80CD00397436 /* APIError.swift in Sources */,
 				5C5140F822B702CB0072C98E /* Payload.swift in Sources */,
-				5C5140FE22B707AC0072C98E /* APIObserver.swift in Sources */,
+				5C43091022BF8FB800397436 /* APIKitCallback.swift in Sources */,
 				5C5140FC22B703C30072C98E /* Demo.swift in Sources */,
+				5C43091222BF94E200397436 /* Observable.swift in Sources */,
 				5C5140ED22B6EC220072C98E /* RequestSender.swift in Sources */,
 				5C5140EF22B6EC4D0072C98E /* APIEndpoint.swift in Sources */,
 				5C5140F622B6EFF00072C98E /* HTTPRequestSender.swift in Sources */,

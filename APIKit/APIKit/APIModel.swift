@@ -29,5 +29,3 @@ extension APIModel {
         return self.encode() == item.encode()
     }
 }
-
-extension Array: APIModel where Element: APIModel {}
