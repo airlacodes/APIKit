@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum APIEndpoint {
-    case poem
+public enum APIEndpoint {
+    case some
 
     case custom(path: String, method: HttpMethod)
 
@@ -24,7 +24,7 @@ enum APIEndpoint {
 
     private var relativePath: String {
         switch self {
-        case .poem:
+        case .some:
             return ""
         case .custom(let path, _):
             return path
@@ -33,7 +33,7 @@ enum APIEndpoint {
 
     var method: HttpMethod {
         switch self {
-        case .poem: return .post
+        case .some: return .post
         case .custom(_, let method): return method
         }
     }

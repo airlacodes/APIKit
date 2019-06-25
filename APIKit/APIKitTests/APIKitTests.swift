@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import TestAPIKit
 
 @testable import APIKit
 

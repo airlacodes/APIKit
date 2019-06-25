@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class Payload {
-    let body: APIModel
+public struct Payload {
+    let body: APIModel?
     let endpoint: APIEndpoint
 
-    init(body: APIModel,
-         endpoint: APIEndpoint) {
+    public init(body: APIModel? = nil,
+                endpoint: APIEndpoint) {
         self.body = body
         self.endpoint = endpoint
     }

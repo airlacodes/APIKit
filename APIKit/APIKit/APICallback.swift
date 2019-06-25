@@ -8,4 +8,4 @@
 
 import Foundation
 
-public typealias APIKitCallback<T: APIModel> = (Result<T, APIError>) -> Void
+public typealias APICallback<T: APIModel> = (Result<T, APIError>) -> Void

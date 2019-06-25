@@ -10,17 +10,16 @@ import Foundation
 
 public class Observable<T: APIModel> {
 
-    private let request: RequestSender
     private let payload: Payload
     private let pollTime: Int
+    internal var request: RequestSender = HTTPRequestSender()
 
-    init(request: RequestSender = HTTPRequestSender(), payload: Payload, pollTime: Int) {
-        self.request = request
-        self.payload = payload
+    public init(pollTime: Int, payload: Payload) {
         self.pollTime = pollTime
+        self.payload = payload
     }
 
-    func observe(_ callback: APIKitCallback<T>) {
+    func observe(_ callback: APICallback<T>) {
 
     }
 

@@ -8,19 +8,25 @@
 
 import Foundation
 
-class APICall<Response: APIModel>: Call {
-    typealias ResponseType = Response
+open class APICall<ResponseModel: APIModel> {
+    public typealias Response = ResponseModel
 
     private let request: RequestSender
-    private let payload: Payload
+    private let endpoint: APIEndpoint
+    private let body: APIModel?
 
     init(requestSender: RequestSender = HTTPRequestSender(),
-         payload: Payload) {
+         endpoint: APIEndpoint,
+         body: APIModel? = nil) {
         self.request = requestSender
-        self.payload = payload
+        self.endpoint = endpoint
+        self.body = body
     }
 
-    func execute(callback: @escaping (Result<ResponseType, APIError>) -> Void) {
+    open func execute(callback: @escaping (Result<Response, APIError>) -> Void) {
+        let payload = Payload(body: body,
+                              endpoint: endpoint)
+
         request.request(payload: payload, callback: { response in
             guard let res = response.decode(ofType: Response.self) else {
                 return
@@ -29,8 +35,11 @@ class APICall<Response: APIModel>: Call {
         })
     }
 
-    func observable(pollTime: Int) -> Observable<ResponseType> {
+    open func observable(pollTime: Int) -> Observable<Response> {
+        let payload = Payload(body: body,
+                              endpoint: endpoint)
+
         // let observerId = payload.hashValue (to keep unique observers and not return duplicate ones) ?
-        return Observable(payload: self.payload, pollTime: 5)
+        return Observable(pollTime: 5, payload: payload)
     }
 }
