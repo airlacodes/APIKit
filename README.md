@@ -34,18 +34,20 @@ struct Post: APIModel {
 }
 ```
 
+And then we can make the call for /post/id: 
 ```swift
-        // create a call
-        let endpoint = Endpoint(path: "https://jsonplaceholder.typicode.com/posts/1)",
-                                method: .get)
-        let call = APICall<Post>(endpoint:endpoint)
+// create a call       
+let endpoint = Endpoint(path: "https://jsonplaceholder.typicode.com/posts/1)",
+                        method: .get)
 
-        call.execute(callback: { response in
-            switch response {
-            case .success(let post): print("POST: ", post)
-            case .failure(let error): print("error: ", error)
-            }
-        })
+let call = APICall<Post>(endpoint: endpoint)
+
+call.execute(callback: { response in
+    switch response {
+        case .success(let post): print("POST: ", post)
+        case .failure(let error): print("error: ", error)
+    }
+})
 ```
 
 ## Observing (polling) TBC
