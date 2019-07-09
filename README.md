@@ -7,14 +7,14 @@ APIKit gives you an object capable of reaching a URL and decoding the response w
 
 It utilises the the [codable](https://developer.apple.com/documentation/swift/codable) protocol to encode and decode your request / response models, [URLSession](https://developer.apple.com/documentation/foundation/urlsession) to make the request and a promise / observer to execute or consistently poll an endpoint.
 
-## Possibilities / Aims
+## Aims
 
-- Fast, quick and easy way to reach to API endpoints
-- Quickly get strongly typed API access to buid customised endpoints for SDKs or integrations
+- Fast, quick and easy way to reach API endpoints
+- Strongly typed API access to buid customised endpoints for SDKs or integrations
 
 ## Example call
 
-Imagine we need to call [this example rest endpoint](https://jsonplaceholder.typicode.com/posts/1) and print the Post to the console.
+Imagine we need to call [this example rest endpoint](https://jsonplaceholder.typicode.com/posts/1) and print the Post properties to the console.
 
 Firstly, we create the Post struct that conforms to APIModel (allias for Codable)
 ```swift
@@ -27,7 +27,7 @@ struct Post: APIModel {
 
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
-        case id = "id"
+        case id
         case title
         case body
     }
@@ -50,6 +50,40 @@ call.execute(callback: { response in
 })
 ```
 
+### Bonus
+
+With APIKit you can statically declare your API for the contract that it is.
+```swift
+
+struct API {
+
+    static func getPost(id: Int) -> APICall<Post> {
+        return APICall<Post>(endpoint: getPostEndpoint(id: id))
+    }
+
+    private static func getPostEndpoint(id: Int) -> Endpoint {
+        return Endpoint(path: "https://jsonplaceholder.typicode.com/posts/\(id)", method: .get)
+    }
+}
+```
+
+Giving you the power to create SDK like access to the endpoint
+```swift
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        API.getPost(id: 1).execute(callback: { response in
+            switch response {
+            case .success(let post): print("POST: ", post)
+            case .failure(let error): print("error: ", error)
+            }
+        })
+    }
+}
+
+```
 ## Observing (polling) TBC
 
 
