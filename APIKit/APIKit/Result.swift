@@ -13,3 +13,8 @@ public enum Result<Value: APIModel, Error> {
     case success(value: Value)
     case failure(error: Error)
 }
+
+enum NetworkResult {
+    case success(_ : Data)
+    case failure(_ : Error)
+}

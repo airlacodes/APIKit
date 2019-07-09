@@ -10,13 +10,13 @@ import Foundation
 
 public class Observable<T: APIModel> {
 
-    private let payload: Payload
+    private let endpoint: Endpoint
     private let pollTime: Int
     internal var request: RequestSender = HTTPRequestSender()
 
-    public init(pollTime: Int, payload: Payload) {
+    public init(pollTime: Int, endpoint: Endpoint) {
         self.pollTime = pollTime
-        self.payload = payload
+        self.endpoint = endpoint
     }
 
     func observe(_ callback: APICallback<T>) {

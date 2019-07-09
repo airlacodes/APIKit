@@ -11,6 +11,6 @@ import Foundation
 class API {
 
     func someEndpoint() -> APICall<SomeResponse> {
-        return APICall<SomeResponse>(endpoint: .some)
+        return APICall<SomeResponse>(endpoint: Endpoint(path: "some"))
     }
 }

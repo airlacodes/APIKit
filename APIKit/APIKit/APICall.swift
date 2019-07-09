@@ -11,35 +11,32 @@ import Foundation
 open class APICall<ResponseModel: APIModel> {
     public typealias Response = ResponseModel
 
-    private let request: RequestSender
-    private let endpoint: APIEndpoint
-    private let body: APIModel?
+    private let endpoint: Endpoint
+    private let request: RequestSender = HTTPRequestSender()
 
-    init(requestSender: RequestSender = HTTPRequestSender(),
-         endpoint: APIEndpoint,
-         body: APIModel? = nil) {
-        self.request = requestSender
+    public init(endpoint: Endpoint) {
         self.endpoint = endpoint
-        self.body = body
     }
 
     open func execute(callback: @escaping (Result<Response, APIError>) -> Void) {
-        let payload = Payload(body: body,
-                              endpoint: endpoint)
+        request.request(endpoint: self.endpoint, callback: { response in
+            switch response {
+            case .success(let data):
+                guard let res = try? JSONDecoder().decode(Response.self, from: data) else {
+                    return
+                }
 
-        request.request(payload: payload, callback: { response in
-            guard let res = response.decode(ofType: Response.self) else {
-                return
+                callback(Result.success(value: res))
+            case .failure(let error):
+                print("ERROR IN APICALL: ", error)
+                callback(Result.failure(error: APIError.networokingError))
             }
-            callback(Result.success(value: res))
         })
     }
 
     open func observable(pollTime: Int) -> Observable<Response> {
-        let payload = Payload(body: body,
-                              endpoint: endpoint)
 
         // let observerId = payload.hashValue (to keep unique observers and not return duplicate ones) ?
-        return Observable(pollTime: 5, payload: payload)
+        return Observable(pollTime: 5, endpoint: self.endpoint)
     }
 }
