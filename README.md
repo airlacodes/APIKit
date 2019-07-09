@@ -35,3 +35,13 @@ apiCall.execute { result in
 
 ## Observing (polling)
 
+
+# Roadmap
+
+Currently working on this project in my sparetime but I'm hoping to implement:
+
+- Observing (watching) endpoints with a providable frequency count
+- A library for testing interactions with APICall<> (APIKit aids you in adhering to SOLID/TDD concepts (
+- Code generation of APIModels from swagger / JSON files (automated syncing of your SDK/Networking layer)
+- An interface / object for interacting with Ethereum contracts
+- Binding to UIElements (mockable for offline UI tests)
