@@ -9,31 +9,46 @@ It utilises the the [codable](https://developer.apple.com/documentation/swift/co
 
 ## Possibilities / Aims
 
-- Fast, quick and easy way to connect to rest api endpoints
-- Create a swift SDK for your API/Platform
+- Fast, quick and easy way to reach to API endpoints
+- Quickly get strongly typed API access to buid customised endpoints for SDKs or integrations
 
+## Example call
+
+Imagine we need to call [this example rest endpoint](https://jsonplaceholder.typicode.com/posts/1) and print the Post to the console.
+
+Firstly, we create the Post struct that conforms to APIModel (allias for Codable)
 ```swift
-let requestBody = SomeModel(someProperty: "abc")
-let endpoint = APIEndpoint.custom(path: "/some", method: .post)
-let payload = Payload(body: requestBody, endpoint: endpoint)
+struct Post: APIModel {
+    let userId: Int
+    let id: Int
+    let title: String
+    let body: String
 
-let apiCall = APICall<SomeResponse>(payload: payload)
 
-apiCall.execute { result in
-    switch resut {
-        case .success(let response): // do something with response
-        case .failure(let error): // handle error
+    enum CodingKeys: String, CodingKey {
+        case userId = "userId"
+        case id = "id"
+        case title
+        case body
     }
 }
 ```
 
+```swift
+        // create a call
+        let endpoint = Endpoint(path: "https://jsonplaceholder.typicode.com/posts/1)",
+                                method: .get)
+        let call = APICall<Post>(endpoint:endpoint)
 
-## APICall<APIModel>
+        call.execute(callback: { response in
+            switch response {
+            case .success(let post): print("POST: ", post)
+            case .failure(let error): print("error: ", error)
+            }
+        })
+```
 
-
-## Execute
-
-## Observing (polling)
+## Observing (polling) TBC
 
 
 # Roadmap
@@ -43,5 +58,5 @@ Currently working on this project in my sparetime but I'm hoping to implement:
 - Observing (watching) endpoints with a providable frequency count
 - A library for testing interactions with APICall<> (APIKit aids you in adhering to SOLID/TDD concepts (
 - Code generation of APIModels from swagger / JSON files (automated syncing of your SDK/Networking layer)
-- An interface / object for interacting with Ethereum contracts
-- Binding to UIElements (mockable for offline UI tests)
+- An interface / object for interacting with GRPC, SmartContracts or any other networking interfaces...
+- Binding to UIElements
