@@ -1,4 +1,4 @@
-This framework is a work in progress and not yet ready for use.
+This framework is a work in progress and not yet ready for use. But anyone is welcome to contribute or use anything they see!
 
 # APIKit
 Connect with an API faster
