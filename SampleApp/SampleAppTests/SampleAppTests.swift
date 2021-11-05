@@ -2,8 +2,8 @@
 //  SampleAppTests.swift
 //  SampleAppTests
 //
-//  Created by Jeevan Thandi on 07/07/2019.
-//  Copyright © 2019 Airla Tech Ltd. All rights reserved.
+//  Created by Codeonomics on 07/07/2019.
+//  Copyright © 2019 Codeonomics.io All rights reserved.
 //
 
 import XCTest

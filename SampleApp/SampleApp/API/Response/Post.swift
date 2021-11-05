@@ -2,8 +2,8 @@
 //  Post.swift
 //  SampleApp
 //
-//  Created by Jeevan Thandi on 09/07/2019.
-//  Copyright © 2019 Airla Tech Ltd. All rights reserved.
+//  Created by Codeonomics on 09/07/2019.
+//  Copyright © 2019 Codeonomics.io All rights reserved.
 //
 
 import APIKit

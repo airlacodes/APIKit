@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09CAD39F2735715100D2F2A3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CAD39E2735715100D2F2A3 /* HTTPMethod.swift */; };
 		5C43090C22BF80CD00397436 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43090B22BF80CD00397436 /* APIError.swift */; };
 		5C43090E22BF81A900397436 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43090D22BF81A900397436 /* Result.swift */; };
 		5C43091022BF8FB800397436 /* APICallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43090F22BF8FB800397436 /* APICallback.swift */; };
@@ -17,13 +18,11 @@
 		5C5140E822B6E5440072C98E /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140E722B6E5440072C98E /* Call.swift */; };
 		5C5140EA22B6EBB90072C98E /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140E922B6EBB90072C98E /* APICall.swift */; };
 		5C5140ED22B6EC220072C98E /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140EC22B6EC220072C98E /* RequestSender.swift */; };
-		5C5140F122B6EC930072C98E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F022B6EC930072C98E /* HTTPMethod.swift */; };
+		5C5140F122B6EC930072C98E /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F022B6EC930072C98E /* HTTPResponse.swift */; };
 		5C5140F322B6EF630072C98E /* SomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F222B6EF630072C98E /* SomeModel.swift */; };
 		5C5140FA22B7034C0072C98E /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140F922B7034C0072C98E /* APIModel.swift */; };
-		5C5140FC22B703C30072C98E /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5140FB22B703C30072C98E /* Demo.swift */; };
 		5CC8660C22D54D5100C0CE63 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8660B22D54D5100C0CE63 /* Endpoint.swift */; };
 		5CDA0D9D22C18E7B001FBC44 /* DemoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA0D9C22C18E7B001FBC44 /* DemoSpec.swift */; };
-		5CDA0DA022C190D5001FBC44 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA0D9E22C19079001FBC44 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,345 +47,10 @@
 			remoteGlobalIDString = 5CEFFE1D22D2914400340CC6;
 			remoteInfo = SampleAppTests;
 		};
-		5CC8684C22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "SampleBackend::App::Product";
-			remoteInfo = App;
-		};
-		5CC8684E22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "SampleBackend::AppTests::Product";
-			remoteInfo = AppTests;
-		};
-		5CC8685022D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Core::Async::Product";
-			remoteInfo = Async;
-		};
-		5CC8685222D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Core::Bits::Product";
-			remoteInfo = Bits;
-		};
-		5CC8685422D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Crypto::CBase32::Product";
-			remoteInfo = CBase32;
-		};
-		5CC8685622D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Crypto::CBcrypt::Product";
-			remoteInfo = CBcrypt;
-		};
-		5CC8685822D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Crypto::CCryptoOpenSSL::Product";
-			remoteInfo = CCryptoOpenSSL;
-		};
-		5CC8685A22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::CNIOAtomics::Product";
-			remoteInfo = CNIOAtomics;
-		};
-		5CC8685C22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::CNIODarwin::Product";
-			remoteInfo = CNIODarwin;
-		};
-		5CC8685E22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::CNIOHTTPParser::Product";
-			remoteInfo = CNIOHTTPParser;
-		};
-		5CC8686022D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::CNIOLinux::Product";
-			remoteInfo = CNIOLinux;
-		};
-		5CC8686222D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio-ssl::CNIOOpenSSL::Product";
-			remoteInfo = CNIOOpenSSL;
-		};
-		5CC8686422D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::CNIOSHA1::Product";
-			remoteInfo = CNIOSHA1;
-		};
-		5CC8686622D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::CNIOZlib::Product";
-			remoteInfo = CNIOZlib;
-		};
-		5CC8686822D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Core::COperatingSystem::Product";
-			remoteInfo = COperatingSystem;
-		};
-		5CC8686A22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Console::Command::Product";
-			remoteInfo = Command;
-		};
-		5CC8686C22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Console::Console::Product";
-			remoteInfo = Console;
-		};
-		5CC8686E22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Core::Core::Product";
-			remoteInfo = Core;
-		};
-		5CC8687022D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Crypto::Crypto::Product";
-			remoteInfo = Crypto;
-		};
-		5CC8687222D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "DatabaseKit::DatabaseKit::Product";
-			remoteInfo = DatabaseKit;
-		};
-		5CC8687422D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Core::Debugging::Product";
-			remoteInfo = Debugging;
-		};
-		5CC8687622D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Fluent::Fluent::Product";
-			remoteInfo = Fluent;
-		};
-		5CC8687822D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Fluent::FluentSQL::Product";
-			remoteInfo = FluentSQL;
-		};
-		5CC8687A22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "FluentSQLite::FluentSQLite::Product";
-			remoteInfo = FluentSQLite;
-		};
-		5CC8687C22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "HTTP::HTTP::Product";
-			remoteInfo = HTTP;
-		};
-		5CC8687E22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Console::Logging::Product";
-			remoteInfo = Logging;
-		};
-		5CC8688022D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Multipart::Multipart::Product";
-			remoteInfo = Multipart;
-		};
-		5CC8688222D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::NIO::Product";
-			remoteInfo = NIO;
-		};
-		5CC8688422D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::NIOConcurrencyHelpers::Product";
-			remoteInfo = NIOConcurrencyHelpers;
-		};
-		5CC8688622D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::NIOFoundationCompat::Product";
-			remoteInfo = NIOFoundationCompat;
-		};
-		5CC8688822D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::NIOHTTP1::Product";
-			remoteInfo = NIOHTTP1;
-		};
-		5CC8688A22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio-ssl::NIOOpenSSL::Product";
-			remoteInfo = NIOOpenSSL;
-		};
-		5CC8688C22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::NIOPriorityQueue::Product";
-			remoteInfo = NIOPriorityQueue;
-		};
-		5CC8688E22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::NIOTLS::Product";
-			remoteInfo = NIOTLS;
-		};
-		5CC8689022D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-nio::NIOWebSocket::Product";
-			remoteInfo = NIOWebSocket;
-		};
-		5CC8689222D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Crypto::Random::Product";
-			remoteInfo = Random;
-		};
-		5CC8689422D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Routing::Routing::Product";
-			remoteInfo = Routing;
-		};
-		5CC8689622D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "SampleBackend::Run::Product";
-			remoteInfo = Run;
-		};
-		5CC8689822D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "SQL::SQL::Product";
-			remoteInfo = SQL;
-		};
-		5CC8689A22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "SQLite::SQLite::Product";
-			remoteInfo = SQLite;
-		};
-		5CC8689C22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Service::Service::Product";
-			remoteInfo = Service;
-		};
-		5CC8689E22D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "TemplateKit::TemplateKit::Product";
-			remoteInfo = TemplateKit;
-		};
-		5CC868A022D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "URLEncodedForm::URLEncodedForm::Product";
-			remoteInfo = URLEncodedForm;
-		};
-		5CC868A222D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Validation::Validation::Product";
-			remoteInfo = Validation;
-		};
-		5CC868A422D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Vapor::Vapor::Product";
-			remoteInfo = Vapor;
-		};
-		5CC868A622D7D58800C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "WebSocket::WebSocket::Product";
-			remoteInfo = WebSocket;
-		};
-		5CDA0D8722C17751001FBC44 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5CDA0D6822C17750001FBC44;
-			remoteInfo = TestAPIKit;
-		};
-		5CDA0D8922C17751001FBC44 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5CDA0D7122C17750001FBC44;
-			remoteInfo = TestAPIKitTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09CAD39E2735715100D2F2A3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		5C43090B22BF80CD00397436 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5C43090D22BF81A900397436 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5C43090F22BF8FB800397436 /* APICallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallback.swift; sourceTree = "<group>"; };
@@ -400,16 +64,12 @@
 		5C5140E722B6E5440072C98E /* Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
 		5C5140E922B6EBB90072C98E /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		5C5140EC22B6EC220072C98E /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
-		5C5140F022B6EC930072C98E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5C5140F022B6EC930072C98E /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		5C5140F222B6EF630072C98E /* SomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeModel.swift; sourceTree = "<group>"; };
 		5C5140F922B7034C0072C98E /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
-		5C5140FB22B703C30072C98E /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		5CC8660222D54CC600C0CE63 /* SampleApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SampleApp.xcodeproj; path = ../SampleApp/SampleApp.xcodeproj; sourceTree = "<group>"; };
 		5CC8660B22D54D5100C0CE63 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SampleBackend.xcodeproj; path = ../../SampleBackend/SampleBackend.xcodeproj; sourceTree = "<group>"; };
-		5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TestAPIKit.xcodeproj; path = ../../TestAPIKit/TestAPIKit.xcodeproj; sourceTree = "<group>"; };
 		5CDA0D9C22C18E7B001FBC44 /* DemoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSpec.swift; sourceTree = "<group>"; };
-		5CDA0D9E22C19079001FBC44 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,9 +94,7 @@
 		5C5140C322B6E4980072C98E = {
 			isa = PBXGroup;
 			children = (
-				5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */,
 				5CC8660222D54CC600C0CE63 /* SampleApp.xcodeproj */,
-				5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */,
 				5C5140CF22B6E4980072C98E /* APIKit */,
 				5C5140DA22B6E4990072C98E /* APIKitTests */,
 				5C5140CE22B6E4980072C98E /* Products */,
@@ -456,7 +114,6 @@
 		5C5140CF22B6E4980072C98E /* APIKit */ = {
 			isa = PBXGroup;
 			children = (
-				5CDA0DA122C19250001FBC44 /* SampleClient */,
 				5C5140D022B6E4990072C98E /* APIKit.h */,
 				5C5140D122B6E4990072C98E /* Info.plist */,
 				5C5140E722B6E5440072C98E /* Call.swift */,
@@ -467,6 +124,7 @@
 				5C5140F922B7034C0072C98E /* APIModel.swift */,
 				5C43090B22BF80CD00397436 /* APIError.swift */,
 				5C43090D22BF81A900397436 /* Result.swift */,
+				09CAD39E2735715100D2F2A3 /* HTTPMethod.swift */,
 				5C5140EB22B6EC0E0072C98E /* Internal */,
 			);
 			path = APIKit;
@@ -487,7 +145,7 @@
 			children = (
 				5C5140EC22B6EC220072C98E /* RequestSender.swift */,
 				5C5140F222B6EF630072C98E /* SomeModel.swift */,
-				5C5140F022B6EC930072C98E /* HTTPMethod.swift */,
+				5C5140F022B6EC930072C98E /* HTTPResponse.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -501,82 +159,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5CC8661022D7D58700C0CE63 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5CC8684D22D7D58800C0CE63 /* App.framework */,
-				5CC8684F22D7D58800C0CE63 /* AppTests.xctest */,
-				5CC8685122D7D58800C0CE63 /* Async.framework */,
-				5CC8685322D7D58800C0CE63 /* Bits.framework */,
-				5CC8685522D7D58800C0CE63 /* CBase32.framework */,
-				5CC8685722D7D58800C0CE63 /* CBcrypt.framework */,
-				5CC8685922D7D58800C0CE63 /* CCryptoOpenSSL.framework */,
-				5CC8685B22D7D58800C0CE63 /* CNIOAtomics.framework */,
-				5CC8685D22D7D58800C0CE63 /* CNIODarwin.framework */,
-				5CC8685F22D7D58800C0CE63 /* CNIOHTTPParser.framework */,
-				5CC8686122D7D58800C0CE63 /* CNIOLinux.framework */,
-				5CC8686322D7D58800C0CE63 /* CNIOOpenSSL.framework */,
-				5CC8686522D7D58800C0CE63 /* CNIOSHA1.framework */,
-				5CC8686722D7D58800C0CE63 /* CNIOZlib.framework */,
-				5CC8686922D7D58800C0CE63 /* COperatingSystem.framework */,
-				5CC8686B22D7D58800C0CE63 /* Command.framework */,
-				5CC8686D22D7D58800C0CE63 /* Console.framework */,
-				5CC8686F22D7D58800C0CE63 /* Core.framework */,
-				5CC8687122D7D58800C0CE63 /* Crypto.framework */,
-				5CC8687322D7D58800C0CE63 /* DatabaseKit.framework */,
-				5CC8687522D7D58800C0CE63 /* Debugging.framework */,
-				5CC8687722D7D58800C0CE63 /* Fluent.framework */,
-				5CC8687922D7D58800C0CE63 /* FluentSQL.framework */,
-				5CC8687B22D7D58800C0CE63 /* FluentSQLite.framework */,
-				5CC8687D22D7D58800C0CE63 /* HTTP.framework */,
-				5CC8687F22D7D58800C0CE63 /* Logging.framework */,
-				5CC8688122D7D58800C0CE63 /* Multipart.framework */,
-				5CC8688322D7D58800C0CE63 /* NIO.framework */,
-				5CC8688522D7D58800C0CE63 /* NIOConcurrencyHelpers.framework */,
-				5CC8688722D7D58800C0CE63 /* NIOFoundationCompat.framework */,
-				5CC8688922D7D58800C0CE63 /* NIOHTTP1.framework */,
-				5CC8688B22D7D58800C0CE63 /* NIOOpenSSL.framework */,
-				5CC8688D22D7D58800C0CE63 /* NIOPriorityQueue.framework */,
-				5CC8688F22D7D58800C0CE63 /* NIOTLS.framework */,
-				5CC8689122D7D58800C0CE63 /* NIOWebSocket.framework */,
-				5CC8689322D7D58800C0CE63 /* Random.framework */,
-				5CC8689522D7D58800C0CE63 /* Routing.framework */,
-				5CC8689722D7D58800C0CE63 /* Run */,
-				5CC8689922D7D58800C0CE63 /* SQL.framework */,
-				5CC8689B22D7D58800C0CE63 /* SQLite.framework */,
-				5CC8689D22D7D58800C0CE63 /* Service.framework */,
-				5CC8689F22D7D58800C0CE63 /* TemplateKit.framework */,
-				5CC868A122D7D58800C0CE63 /* URLEncodedForm.framework */,
-				5CC868A322D7D58800C0CE63 /* Validation.framework */,
-				5CC868A522D7D58800C0CE63 /* Vapor.framework */,
-				5CC868A722D7D58800C0CE63 /* WebSocket.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5CDA0D8322C17750001FBC44 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5CDA0D8822C17751001FBC44 /* TestAPIKit.framework */,
-				5CDA0D8A22C17751001FBC44 /* TestAPIKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5CDA0D8B22C18143001FBC44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5CDA0DA122C19250001FBC44 /* SampleClient */ = {
-			isa = PBXGroup;
-			children = (
-				5C5140FB22B703C30072C98E /* Demo.swift */,
-				5CDA0D9E22C19079001FBC44 /* API.swift */,
-			);
-			path = SampleClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -663,14 +250,6 @@
 					ProductGroup = 5CC8660322D54CC600C0CE63 /* Products */;
 					ProjectRef = 5CC8660222D54CC600C0CE63 /* SampleApp.xcodeproj */;
 				},
-				{
-					ProductGroup = 5CC8661022D7D58700C0CE63 /* Products */;
-					ProjectRef = 5CC8660F22D7D58700C0CE63 /* SampleBackend.xcodeproj */;
-				},
-				{
-					ProductGroup = 5CDA0D8322C17750001FBC44 /* Products */;
-					ProjectRef = 5CDA0D8222C17750001FBC44 /* TestAPIKit.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -693,342 +272,6 @@
 			fileType = wrapper.cfbundle;
 			path = SampleAppTests.xctest;
 			remoteRef = 5CC8660922D54CC600C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8684D22D7D58800C0CE63 /* App.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = App.framework;
-			remoteRef = 5CC8684C22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8684F22D7D58800C0CE63 /* AppTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = file;
-			path = AppTests.xctest;
-			remoteRef = 5CC8684E22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8685122D7D58800C0CE63 /* Async.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Async.framework;
-			remoteRef = 5CC8685022D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8685322D7D58800C0CE63 /* Bits.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Bits.framework;
-			remoteRef = 5CC8685222D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8685522D7D58800C0CE63 /* CBase32.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CBase32.framework;
-			remoteRef = 5CC8685422D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8685722D7D58800C0CE63 /* CBcrypt.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CBcrypt.framework;
-			remoteRef = 5CC8685622D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8685922D7D58800C0CE63 /* CCryptoOpenSSL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CCryptoOpenSSL.framework;
-			remoteRef = 5CC8685822D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8685B22D7D58800C0CE63 /* CNIOAtomics.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CNIOAtomics.framework;
-			remoteRef = 5CC8685A22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8685D22D7D58800C0CE63 /* CNIODarwin.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CNIODarwin.framework;
-			remoteRef = 5CC8685C22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8685F22D7D58800C0CE63 /* CNIOHTTPParser.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CNIOHTTPParser.framework;
-			remoteRef = 5CC8685E22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8686122D7D58800C0CE63 /* CNIOLinux.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CNIOLinux.framework;
-			remoteRef = 5CC8686022D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8686322D7D58800C0CE63 /* CNIOOpenSSL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CNIOOpenSSL.framework;
-			remoteRef = 5CC8686222D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8686522D7D58800C0CE63 /* CNIOSHA1.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CNIOSHA1.framework;
-			remoteRef = 5CC8686422D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8686722D7D58800C0CE63 /* CNIOZlib.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CNIOZlib.framework;
-			remoteRef = 5CC8686622D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8686922D7D58800C0CE63 /* COperatingSystem.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = COperatingSystem.framework;
-			remoteRef = 5CC8686822D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8686B22D7D58800C0CE63 /* Command.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Command.framework;
-			remoteRef = 5CC8686A22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8686D22D7D58800C0CE63 /* Console.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Console.framework;
-			remoteRef = 5CC8686C22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8686F22D7D58800C0CE63 /* Core.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Core.framework;
-			remoteRef = 5CC8686E22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8687122D7D58800C0CE63 /* Crypto.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Crypto.framework;
-			remoteRef = 5CC8687022D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8687322D7D58800C0CE63 /* DatabaseKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DatabaseKit.framework;
-			remoteRef = 5CC8687222D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8687522D7D58800C0CE63 /* Debugging.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Debugging.framework;
-			remoteRef = 5CC8687422D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8687722D7D58800C0CE63 /* Fluent.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Fluent.framework;
-			remoteRef = 5CC8687622D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8687922D7D58800C0CE63 /* FluentSQL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FluentSQL.framework;
-			remoteRef = 5CC8687822D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8687B22D7D58800C0CE63 /* FluentSQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FluentSQLite.framework;
-			remoteRef = 5CC8687A22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8687D22D7D58800C0CE63 /* HTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = HTTP.framework;
-			remoteRef = 5CC8687C22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8687F22D7D58800C0CE63 /* Logging.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Logging.framework;
-			remoteRef = 5CC8687E22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8688122D7D58800C0CE63 /* Multipart.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Multipart.framework;
-			remoteRef = 5CC8688022D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8688322D7D58800C0CE63 /* NIO.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NIO.framework;
-			remoteRef = 5CC8688222D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8688522D7D58800C0CE63 /* NIOConcurrencyHelpers.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NIOConcurrencyHelpers.framework;
-			remoteRef = 5CC8688422D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8688722D7D58800C0CE63 /* NIOFoundationCompat.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NIOFoundationCompat.framework;
-			remoteRef = 5CC8688622D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8688922D7D58800C0CE63 /* NIOHTTP1.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NIOHTTP1.framework;
-			remoteRef = 5CC8688822D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8688B22D7D58800C0CE63 /* NIOOpenSSL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NIOOpenSSL.framework;
-			remoteRef = 5CC8688A22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8688D22D7D58800C0CE63 /* NIOPriorityQueue.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NIOPriorityQueue.framework;
-			remoteRef = 5CC8688C22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8688F22D7D58800C0CE63 /* NIOTLS.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NIOTLS.framework;
-			remoteRef = 5CC8688E22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8689122D7D58800C0CE63 /* NIOWebSocket.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NIOWebSocket.framework;
-			remoteRef = 5CC8689022D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8689322D7D58800C0CE63 /* Random.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Random.framework;
-			remoteRef = 5CC8689222D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8689522D7D58800C0CE63 /* Routing.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Routing.framework;
-			remoteRef = 5CC8689422D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8689722D7D58800C0CE63 /* Run */ = {
-			isa = PBXReferenceProxy;
-			fileType = text;
-			path = Run;
-			remoteRef = 5CC8689622D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8689922D7D58800C0CE63 /* SQL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQL.framework;
-			remoteRef = 5CC8689822D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8689B22D7D58800C0CE63 /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = 5CC8689A22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8689D22D7D58800C0CE63 /* Service.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Service.framework;
-			remoteRef = 5CC8689C22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8689F22D7D58800C0CE63 /* TemplateKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = TemplateKit.framework;
-			remoteRef = 5CC8689E22D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC868A122D7D58800C0CE63 /* URLEncodedForm.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = URLEncodedForm.framework;
-			remoteRef = 5CC868A022D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC868A322D7D58800C0CE63 /* Validation.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Validation.framework;
-			remoteRef = 5CC868A222D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC868A522D7D58800C0CE63 /* Vapor.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Vapor.framework;
-			remoteRef = 5CC868A422D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC868A722D7D58800C0CE63 /* WebSocket.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = WebSocket.framework;
-			remoteRef = 5CC868A622D7D58800C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CDA0D8822C17751001FBC44 /* TestAPIKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = TestAPIKit.framework;
-			remoteRef = 5CDA0D8722C17751001FBC44 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CDA0D8A22C17751001FBC44 /* TestAPIKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = TestAPIKitTests.xctest;
-			remoteRef = 5CDA0D8922C17751001FBC44 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1060,12 +303,11 @@
 				5C5140FA22B7034C0072C98E /* APIModel.swift in Sources */,
 				5CC8660C22D54D5100C0CE63 /* Endpoint.swift in Sources */,
 				5C5140F322B6EF630072C98E /* SomeModel.swift in Sources */,
-				5CDA0DA022C190D5001FBC44 /* API.swift in Sources */,
 				5C5140E822B6E5440072C98E /* Call.swift in Sources */,
-				5C5140F122B6EC930072C98E /* HTTPMethod.swift in Sources */,
+				5C5140F122B6EC930072C98E /* HTTPResponse.swift in Sources */,
 				5C43090C22BF80CD00397436 /* APIError.swift in Sources */,
+				09CAD39F2735715100D2F2A3 /* HTTPMethod.swift in Sources */,
 				5C43091022BF8FB800397436 /* APICallback.swift in Sources */,
-				5C5140FC22B703C30072C98E /* Demo.swift in Sources */,
 				5C43091222BF94E200397436 /* Observable.swift in Sources */,
 				5C5140ED22B6EC220072C98E /* RequestSender.swift in Sources */,
 			);
@@ -1230,7 +472,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.airlatech..APIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeonomics.APIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1256,7 +498,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.airlatech..APIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeonomics.APIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;

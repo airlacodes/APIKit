@@ -2,8 +2,8 @@
 //  APIModel.swift
 //  APIKit
 //
-//  Created by Jeevan Thandi on 17/06/2019.
-//  Copyright © 2019 Airla Tech Ltd. All rights reserved.
+//  Created by Codeonomics on 17/06/2019.
+//  Copyright © 2019 Codeonomics.io All rights reserved.
 //
 
 import Foundation
@@ -27,16 +27,5 @@ extension APIModel {
 
     public func equals(_ item: APIModel) -> Bool {
         return self.encode() == item.encode()
-    }
-}
-
-protocol Stubbable {}
-
-extension Stubbable {
-    func setting<T>(_ keyPath: WritableKeyPath<Self, T>,
-                    to value: T) -> Self {
-        var stub = self
-        stub[keyPath: keyPath] = value
-        return stub
     }
 }

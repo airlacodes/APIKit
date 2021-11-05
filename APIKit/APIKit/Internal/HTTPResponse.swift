@@ -2,28 +2,17 @@
 //  HTTPMethod.swift
 //  APIKit
 //
-//  Created by Jeevan Thandi on 16/06/2019.
-//  Copyright © 2019 Airla Tech Ltd. All rights reserved.
+//  Created by Codeonomics on 16/06/2019.
+//  Copyright © 2019 Codeonomics.io All rights reserved.
 //
 
 import Foundation
 
-public enum HttpMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case delete = "DELETE"
-    case put = "PUT"
-    case patch = "PATCH"
-}
-
-public typealias HttpHeaders = [String: String]
-typealias HttpStatusCode = Int
-
 struct HttpResponse {
-    let code: HttpStatusCode
+    let code: Int
     let data: Data
 
-    init(code: HttpStatusCode, data: Data) {
+    init(code: Int, data: Data) {
         self.code = code
         self.data = data
     }
@@ -41,12 +30,4 @@ struct HttpResponse {
         }
         return decoded
     }
-}
-
-enum HttpStatus: Int {
-    static let maxValueSuccessCode = 299
-
-    case success = 201
-    case badRequest = 400
-    case serverError = 500
 }

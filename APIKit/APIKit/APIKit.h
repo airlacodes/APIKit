@@ -2,8 +2,8 @@
 //  APIKit.h
 //  APIKit
 //
-//  Created by Jeevan Thandi on 16/06/2019.
-//  Copyright © 2019 Airla Tech Ltd. All rights reserved.
+//  Created by Codeonomics on 16/06/2019.
+//  Copyright © 2019 Codeonomics.io All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
