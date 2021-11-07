@@ -26,7 +26,12 @@ class HTTPRequestSender: RequestSender {
     }
 
     func request(endpoint: Endpoint, callback: @escaping (NetworkResult) -> Void) {
-        let request = URLRequest(url: URL(string: endpoint.path)!)
+        var request = URLRequest(url: URL(string: endpoint.path)!)
+        
+        APIKit.requestInterceptor?.sendWithHeaders(endpoint: endpoint).forEach { header in
+            request.addValue(header.value, forHTTPHeaderField: header.key)
+        }
+        
         let task = urlSession.dataTask(with: request,
                                        completionHandler: { (data, response, error) in
                                         if let error = error {
@@ -91,7 +96,12 @@ class BearerRequestSender: RequestSender {
             return
         }
         
-        request.addValue(bearer, forHTTPHeaderField: "Bearer")
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
+        
+        APIKit.requestInterceptor?.sendWithHeaders(endpoint: endpoint).forEach { header in
+            request.addValue(header.value, forHTTPHeaderField: header.key)
+        }
+        
         let task = urlSession.dataTask(with: request,
                                        completionHandler: { [weak self](data, response, error) in
                                         if let error = error {
