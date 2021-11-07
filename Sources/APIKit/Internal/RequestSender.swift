@@ -28,11 +28,11 @@ class HTTPRequestSender: RequestSender {
     func request(endpoint: Endpoint, callback: @escaping (NetworkResult) -> Void) {
         let request = URLRequest(url: URL(string: endpoint.path)!)
         let task = urlSession.dataTask(with: request,
-                                       completionHandler: { [weak self] (data, response, error) in
+                                       completionHandler: { (data, response, error) in
                                         if let error = error {
                                             callback(.failure(error))
                                         } else if let data = data {
-                                            self?.responseHandler.handle(response: response,
+                                            self.responseHandler.handle(response: response,
                                                                    data: data,
                                                                    completion: callback)
                                         } else {
@@ -67,10 +67,10 @@ class BearerRequestSender: RequestSender {
     func request(endpoint: Endpoint, callback: @escaping (NetworkResult) -> Void) {
 
         if(tokenRefresher.credentialsStore.shouldRefreshCredentials()) {
-            tokenRefresher.refresh(completion: { [weak self] result in
+            tokenRefresher.refresh(completion: { result in
                 switch result {
                 case .refreshed:
-                    self?.completeRequest(endpoint: endpoint, callback: callback)
+                    self.completeRequest(endpoint: endpoint, callback: callback)
                 case .refreshFailed:
                     callback(.failure(APIError.unexpectedError))
                 case .shouldRetry:
