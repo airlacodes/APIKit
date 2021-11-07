@@ -16,7 +16,8 @@ class ViewController: UIViewController {
 
         // create a call
         let endpoint = Endpoint(path: "https://jsonplaceholder.typicode.com/posts/1)",
-                                method: .get)
+                                method: .get,
+                                authenticated: false)
         let call = APICall<Post>(endpoint:endpoint)
 
         call.execute(callback: { response in

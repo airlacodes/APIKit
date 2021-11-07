@@ -29,3 +29,4 @@ extension APIModel {
         return self.encode() == item.encode()
     }
 }
+

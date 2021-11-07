@@ -12,17 +12,26 @@ open class APICall<ResponseModel: APIModel> {
     public typealias Response = ResponseModel
 
     private let endpoint: Endpoint
-    private let request: RequestSender = HTTPRequestSender()
 
     public init(endpoint: Endpoint) {
         self.endpoint = endpoint
     }
 
     open func execute(callback: @escaping (Result<Response, APIError>) -> Void) {
-        request.request(endpoint: self.endpoint, callback: { response in
+        var requestSender: RequestSender?
+        
+        if(endpoint.authenticated) {
+            requestSender = BearerRequestSender()
+        } else {
+            requestSender = HTTPRequestSender()
+        }
+        
+        
+        requestSender?.request(endpoint: self.endpoint, callback: { response in
             switch response {
             case .success(let data):
                 guard let res = try? JSONDecoder().decode(Response.self, from: data) else {
+                    callback(.failure(error: APIError.failedToDecodeResponse(data: data)))
                     return
                 }
 

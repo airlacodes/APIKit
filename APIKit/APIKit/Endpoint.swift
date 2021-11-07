@@ -12,10 +12,12 @@ public struct Endpoint {
     public let path: String
     public let method: HttpMethod
     public var requestPayload: APIModel?
-
-    public init(path: String, method: HttpMethod = .post, requestPayload: APIModel? = nil) {
+    public var authenticated: Bool = true
+    
+    public init(path: String, method: HttpMethod = .post, requestPayload: APIModel? = nil, authenticated: Bool = true) {
         self.path = path
         self.method = method
         self.requestPayload = requestPayload
+        self.authenticated = authenticated
     }
 }

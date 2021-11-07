@@ -12,4 +12,6 @@ public enum APIError: Error {
     case networokingError
     case codableError
     case lazyError
+    case unauthorised
+    case failedToDecodeResponse(data: Data)
 }
