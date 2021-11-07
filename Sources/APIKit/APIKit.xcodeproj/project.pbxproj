@@ -35,20 +35,6 @@
 			remoteGlobalIDString = 5C5140CC22B6E4980072C98E;
 			remoteInfo = APIKit;
 		};
-		5CC8660722D54CC600C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660222D54CC600C0CE63 /* SampleApp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5CEFFE0922D2914100340CC6;
-			remoteInfo = SampleApp;
-		};
-		5CC8660922D54CC600C0CE63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CC8660222D54CC600C0CE63 /* SampleApp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5CEFFE1D22D2914400340CC6;
-			remoteInfo = SampleAppTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +57,6 @@
 		5C5140E922B6EBB90072C98E /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		5C5140EC22B6EC220072C98E /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
 		5C5140F022B6EC930072C98E /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
-		5CC8660222D54CC600C0CE63 /* SampleApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SampleApp.xcodeproj; path = ../SampleApp/SampleApp.xcodeproj; sourceTree = "<group>"; };
 		5CC8660B22D54D5100C0CE63 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		5CDA0D9C22C18E7B001FBC44 /* DemoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +83,6 @@
 		5C5140C322B6E4980072C98E = {
 			isa = PBXGroup;
 			children = (
-				5CC8660222D54CC600C0CE63 /* SampleApp.xcodeproj */,
 				5C5140CF22B6E4980072C98E /* APIKit */,
 				5C5140DA22B6E4990072C98E /* APIKitTests */,
 				5C5140CE22B6E4980072C98E /* Products */,
@@ -154,15 +138,6 @@
 				5C5140F022B6EC930072C98E /* HTTPResponse.swift */,
 			);
 			path = Internal;
-			sourceTree = "<group>";
-		};
-		5CC8660322D54CC600C0CE63 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5CC8660822D54CC600C0CE63 /* SampleApp.app */,
-				5CC8660A22D54CC600C0CE63 /* SampleAppTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		5CDA0D8B22C18143001FBC44 /* Frameworks */ = {
@@ -251,12 +226,6 @@
 			mainGroup = 5C5140C322B6E4980072C98E;
 			productRefGroup = 5C5140CE22B6E4980072C98E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5CC8660322D54CC600C0CE63 /* Products */;
-					ProjectRef = 5CC8660222D54CC600C0CE63 /* SampleApp.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				5C5140CC22B6E4980072C98E /* APIKit */,
@@ -264,23 +233,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5CC8660822D54CC600C0CE63 /* SampleApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SampleApp.app;
-			remoteRef = 5CC8660722D54CC600C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CC8660A22D54CC600C0CE63 /* SampleAppTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SampleAppTests.xctest;
-			remoteRef = 5CC8660922D54CC600C0CE63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5C5140CB22B6E4980072C98E /* Resources */ = {
