@@ -38,7 +38,7 @@ open class APICall<ResponseModel: APIModel> {
                 callback(Result.success(value: res))
             case .failure(let error):
                 print("ERROR IN APICALL: ", error)
-                callback(Result.failure(error: APIError.unexpectedError))
+                callback(Result.failure(error: error))
             }
         })
     }
