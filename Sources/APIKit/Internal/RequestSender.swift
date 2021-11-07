@@ -16,23 +16,27 @@ protocol RequestSender {
 
 class HTTPRequestSender: RequestSender {
 
-
     private let urlSession: URLSession
-
-    init(urlSession: URLSession = URLSession.shared) {
+    private let responseHandler: ResponseHandler
+    
+    init(urlSession: URLSession = URLSession.shared,
+         responseHandler: ResponseHandler = APIKitResponseHandler()) {
         self.urlSession = urlSession
+        self.responseHandler = responseHandler
     }
 
     func request(endpoint: Endpoint, callback: @escaping (NetworkResult) -> Void) {
         let request = URLRequest(url: URL(string: endpoint.path)!)
         let task = urlSession.dataTask(with: request,
-                                       completionHandler: { (data, response, error) in
+                                       completionHandler: { [weak self] (data, response, error) in
                                         if let error = error {
                                             callback(.failure(error))
                                         } else if let data = data {
-                                            callback(.success(data))
+                                            self?.responseHandler.handle(response: response,
+                                                                   data: data,
+                                                                   completion: callback)
                                         } else {
-                                            callback(.failure(APIError.networokingError))
+                                            callback(.failure(APIError.unexpectedError))
                                         }
         })
         task.resume()
@@ -48,13 +52,16 @@ class BearerRequestSender: RequestSender {
     private let urlSession: URLSession
     private let credentialsStore: CredentialsStore
     private let tokenRefresher: TokenRefresher
+    private let responseHandler: ResponseHandler
     
     init(urlSession: URLSession = URLSession.shared,
          credentialsStore: CredentialsStore = APIKitCredentialsStore(),
-         tokenRefresher: TokenRefresher = APIKitTokenRefresher()) {
+         tokenRefresher: TokenRefresher = APIKitTokenRefresher(),
+         responseHandler: ResponseHandler = APIKitResponseHandler()) {
         self.urlSession = urlSession
         self.credentialsStore = credentialsStore
         self.tokenRefresher = tokenRefresher
+        self.responseHandler = responseHandler
     }
     
     func request(endpoint: Endpoint, callback: @escaping (NetworkResult) -> Void) {
@@ -65,7 +72,7 @@ class BearerRequestSender: RequestSender {
                 case .refreshed:
                     self?.completeRequest(endpoint: endpoint, callback: callback)
                 case .refreshFailed:
-                    callback(.failure(APIError.networokingError))
+                    callback(.failure(APIError.unexpectedError))
                 case .shouldRetry:
                     callback(.failure(APIError.unauthorised))
                 }
@@ -86,13 +93,16 @@ class BearerRequestSender: RequestSender {
         
         request.addValue(bearer, forHTTPHeaderField: "Bearer")
         let task = urlSession.dataTask(with: request,
-                                       completionHandler: { (data, response, error) in
+                                       completionHandler: { [weak self](data, response, error) in
                                         if let error = error {
                                             callback(.failure(error))
                                         } else if let data = data {
+                                            self?.responseHandler.handle(response: response,
+                                                                   data: data,
+                                                                   completion: callback)
                                             callback(.success(data))
                                         } else {
-                                            callback(.failure(APIError.networokingError))
+                                            callback(.failure(APIError.unexpectedError))
                                         }
         })
         task.resume()

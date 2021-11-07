@@ -9,9 +9,8 @@
 import Foundation
 
 public enum APIError: Error {
-    case networokingError
-    case codableError
-    case lazyError
+    case unexpectedError
     case unauthorised
-    case failedToDecodeResponse(data: Data)
+    case modelDecodingFailed(data: Data)
+    case responseError(object: Data)
 }
