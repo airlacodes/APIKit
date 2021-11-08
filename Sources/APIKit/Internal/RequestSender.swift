@@ -27,7 +27,7 @@ class HTTPRequestSender: RequestSender {
 
     func request(endpoint: Endpoint, callback: @escaping (NetworkResult) -> Void) {
         var request = URLRequest(url: URL(string: endpoint.path)!)
-        
+        request.httpMethod = endpoint.method.rawValue
         APIKit.requestInterceptor?.sendWithHeaders(endpoint: endpoint).forEach { header in
             request.addValue(header.value, forHTTPHeaderField: header.key)
         }
@@ -90,7 +90,7 @@ class BearerRequestSender: RequestSender {
     
     private func completeRequest(endpoint: Endpoint, callback: @escaping (NetworkResult) -> Void) {
         var request = URLRequest(url: URL(string: endpoint.path)!)
-        
+        request.httpMethod = endpoint.method.rawValue
         guard let bearer = tokenRefresher.credentialsStore.getCurrentCredentials()?.accessToken else {
             callback(.failure(APIError.unauthorised))
             return
