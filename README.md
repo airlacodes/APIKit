@@ -14,6 +14,7 @@ It utilises the the [codable](https://developer.apple.com/documentation/swift/co
 - Supports JWT Bearer authentication (specify if an Endpoint requires authentication, inject refresh token path and token will automatically persist and refresh)
 - Request interceptor to add your own headers to any request
 - 0 dependencies / extension framework (built on URLSession)
+- Flexible (decode error responses with your own models and enrich requests with custom headers)
 
 ## Example call
 
