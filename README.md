@@ -7,16 +7,19 @@ APIKit gives you an object capable of reaching a URL and decoding the response w
 
 It utilises the the [codable](https://developer.apple.com/documentation/swift/codable) protocol to encode and decode your request / response models, [URLSession](https://developer.apple.com/documentation/foundation/urlsession) to make the request and a promise / observer to execute or consistently poll an endpoint.
 
-## Aims
+## Features
 
 - Fast, quick and easy way to reach API endpoints
-- Strongly typed API access to buid customised endpoints for SDKs or integrations
+- A quick way to make your own SDK for your API (only worry about defining endpoint paths, request models and response models)
+- Supports JWT Bearer authentication (specify if an Endpoint requires authentication, inject refresh token path and token will automatically persist and refresh)
+- Request interceptor to add your own headers to any request
 
 ## Example call
 
 Imagine we need to call [this example rest endpoint](https://jsonplaceholder.typicode.com/posts/1) and print the Post properties to the console.
 
-Firstly, we create the Post struct that conforms to APIModel (allias for Codable)
+Firstly, we create a Post struct that conforms to APIModel (allias for Codable) and the schema of the jsonplaceholder.typeicode.com response.
+
 ```swift
 struct Post: APIModel {
     let userId: Int
@@ -89,10 +92,6 @@ class ViewController: UIViewController {
 
 # Roadmap
 
-Currently working on this project in my sparetime but I'm hoping to implement:
-
-- Observing (watching) endpoints with a providable frequency count
-- A library for testing interactions with APICall<> (APIKit aids you in adhering to SOLID/TDD concepts (
-- Code generation of APIModels from swagger / JSON files (automated syncing of your SDK/Networking layer)
-- An interface / object for interacting with GRPC, SmartContracts or any other networking interfaces...
-- Binding to UIElements
+- Auth documentation
+- SDK design structure inspiration 
+-
