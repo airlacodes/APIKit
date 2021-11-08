@@ -95,4 +95,4 @@ class ViewController: UIViewController {
 
 - Auth documentation
 - SDK design structure inspiration 
--
+- Combine based polling 
