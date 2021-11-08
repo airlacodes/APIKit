@@ -45,12 +45,12 @@ let endpoint = Endpoint(path: "https://jsonplaceholder.typicode.com/posts/1)",
 
 let call = APICall<Post>(endpoint: endpoint)
 
-call.execute(callback: { response in
+call.execute { response in
     switch response {
         case .success(let post): print("POST: ", post)
         case .failure(let error): print("error: ", error)
     }
-})
+}
 ```
 
 ### Bonus
@@ -77,12 +77,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        API.getPost(id: 1).execute(callback: { response in
+        API.getPost(id: 1).execute { response in
             switch response {
             case .success(let post): print("POST: ", post)
             case .failure(let error): print("error: ", error)
             }
-        })
+        }
     }
 }
 
