@@ -13,6 +13,7 @@ It utilises the the [codable](https://developer.apple.com/documentation/swift/co
 - A quick way to make your own SDK for your API (only worry about defining endpoint paths, request models and response models)
 - Supports JWT Bearer authentication (specify if an Endpoint requires authentication, inject refresh token path and token will automatically persist and refresh)
 - Request interceptor to add your own headers to any request
+- 0 dependencies / extension framework (built on URLSession)
 
 ## Example call
 
