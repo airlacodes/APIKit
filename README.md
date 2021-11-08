@@ -55,7 +55,7 @@ call.execute { response in
 }
 ```
 
-### Bonus
+### Turn your networking layer into an SDK
 
 With APIKit you can statically declare your API for the contract that it is.
 ```swift
@@ -72,7 +72,7 @@ struct API {
 }
 ```
 
-Giving you the power to create SDK like access to the endpoint
+Giving you or your customers strongly typed access to an endpoint
 ```swift
 class ViewController: UIViewController {
 
