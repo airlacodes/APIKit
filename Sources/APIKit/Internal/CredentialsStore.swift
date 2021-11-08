@@ -56,7 +56,7 @@ final class APIKitCredentialsStore: CredentialsStore {
     }
 }
 
-struct Credentials: APIModel {
+public struct Credentials: APIModel {
     
     let accessToken: String
     let refreshToken: String
