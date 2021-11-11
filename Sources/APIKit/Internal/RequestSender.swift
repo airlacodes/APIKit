@@ -129,4 +129,4 @@ class BearerRequestSender: RequestSender {
 }
 
 
-struct APIKitVoid: APIModel {}
+public struct APIKitVoid: APIModel {}
