@@ -35,7 +35,21 @@ final class APIKitCredentialsStore: CredentialsStore {
     }
     
     func getCurrentCredentials() -> Credentials? {
-        return nil
+        
+        guard let rawCredentialsData = dataStore.value(forKey: currentCredentials) as? Data else {
+            return nil
+        }
+        
+        guard let decodedCredentials = try? JSONDecoder().decode(Credentials.self,
+                                                                 from: rawCredentialsData) else {
+            return nil
+        }
+        
+        if(shouldRefreshCredentials()) {
+            return nil
+        } else {
+            return decodedCredentials
+        }
     }
     
     func shouldRefreshCredentials() -> Bool {
