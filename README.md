@@ -1,5 +1,3 @@
-This framework is a work in progress and not yet ready for use. But anyone is welcome to contribute or use anything they see!
-
 # APIKit
 Connect with an API faster
 
@@ -156,3 +154,28 @@ Now APIKit has a refresh token path and credentials, hhen you specify an endpoin
 
 - SDK design structure inspiration 
 - Combine based polling 
+
+## Issues
+
+_Looking to contribute?_
+
+### 🐛 Bugs
+
+Please file an issue for bugs, missing documentation, or unexpected behavior.
+
+### 💡 Feature Requests
+
+Please file an issue to suggest new features. Vote on feature requests by adding
+a 👍. This helps maintainers prioritize what to work on.
+
+### ❓ Questions
+
+For questions related to using the library, please re-visit a documentation first. If there are no answers, please create an issue with a label `help needed`.
+
+## Useful Links
+
+[JWT explained](https://www.youtube.com/watch?v=-Z57Ss_uiuc)
+
+## License
+[MIT](https://opensource.org/licenses/MIT)
+
