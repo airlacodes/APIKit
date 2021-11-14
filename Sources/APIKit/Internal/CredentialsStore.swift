@@ -45,11 +45,7 @@ final class APIKitCredentialsStore: CredentialsStore {
             return nil
         }
         
-        if(shouldRefreshCredentials()) {
-            return nil
-        } else {
-            return decodedCredentials
-        }
+        return decodedCredentials
     }
     
     func shouldRefreshCredentials() -> Bool {
