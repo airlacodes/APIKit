@@ -1,5 +1,3 @@
-This framework is a work in progress and not yet ready for use. But anyone is welcome to contribute or use anything they see!
-
 # APIKit
 Connect with an API faster
 
@@ -41,7 +39,7 @@ struct Post: APIModel {
 
 And then we can make the call for /post/id: 
 ```swift
-// create a call       
+
 let endpoint = Endpoint(path: "https://jsonplaceholder.typicode.com/posts/1)",
                         method: .get)
 
@@ -89,11 +87,95 @@ class ViewController: UIViewController {
 }
 
 ```
-## Observing (polling) TBC
 
+### JWT / Bearer Auth endpoints
+
+Not all endpoints are unprotected. Chances are you need to talk to a backend which implements bearer auth (JWT). This involves handling an access token which could expire and requires refreshing. APIKit has you covered by keeping hold of 'Credentials' in the cache. 
+
+To tell APIKit to add 'Bearer: xxx' to the request header, specify authenticated = true when creating the Endpoint you want to call: 
+```swift
+
+let profileEndpoint = Endpoint(path: "https://protectedendpoint.com",
+                               method: .post
+                               requestPayload: nil,
+                               authenticated: true) // note: true / false tells APIKit to add Bearer
+                               
+let apiCall = APICall<ExpectedResponse>(endpoint: protectedEndpoint)
+
+apiCall.execute { result in
+   print(result)
+}
+```
+Now APIKit knows to add a 'Bearer' field and it also knows to refresh. But you may wonder how it knows the refresh token path, access token and refresh token to use.  This can all be supplied to the APIKit singleton both as a setting (refresh token path) and upon successful login.
+
+
+
+```swift
+//AppDelegate / App start up: let APIKit know a refresh token path
+
+APIKit.refreshTokenPath = "https://my-api/refresh" 
+
+```
+
+As well as a refresh token path, APIKit will also need 'Credentials'. This struct can be supplied to the APIKit singleton upon a successful login call. APIKit uses standard practice in JWT/Bearer auth implementation. So long as your backend auth / refresh endpoints return the following structure and coding keys, APIKit will be able to keep track under the provided 'Credentials' struct:
+
+```swift
+{
+ access_token: String
+ refresh_token: String
+ expires_in: Int
+}
+```
+Credentials can be provided to the APIKit singleton after login:
+
+``` swift
+// perform login APICall 
+let authEndpoint = Endpoint(path: "https://my-api/auth",
+                            method: .post,
+                            requestPayload: LoginRequest(email: "hi@hi.com", password: "123"),
+                            authenticated: false)
+                            
+let authCall = APICall<Auth>(endpoint: authEndpoint)
+
+authCall.execute { result in
+    switch result {
+        case .success(let auth):
+            let credentials = Credentials(accessToken: auth.accessToken, refreshToken: auth.refreshToken, expiresIn: auth.expiresIn)
+            APIKit.credentials = credentials
+        default: break
+    }
+}
+```
+Now APIKit has a refresh token path and credentials, hhen you specify an endpoint is 'authenticated' moving forward, it will make use of these details to keep authenticated (adding Bearer header + automatic JWT refresh if token is 30 seconds away from expiring). Otherwise it will throw and unauthorised error as a response and you can log your user out accordingly. 
+
+## Observing (polling) TBC
 
 # Roadmap
 
-- Auth documentation
 - SDK design structure inspiration 
 - Combine based polling 
+
+## Issues
+
+_Looking to contribute?_
+
+### 🐛 Bugs
+
+Please file an issue for bugs, missing documentation, or unexpected behavior.
+
+### 💡 Feature Requests
+
+Please file an issue to suggest new features. Vote on feature requests by adding
+a 👍. This helps maintainers prioritize what to work on.
+
+### ❓ Questions
+
+For questions related to using the library, please re-visit a documentation first. If there are no answers, please create an issue with a label `help needed`.
+
+## Useful Links
+
+[JWT explained](https://www.youtube.com/watch?v=-Z57Ss_uiuc)
+
+## License
+[MIT](https://opensource.org/licenses/MIT)
+
