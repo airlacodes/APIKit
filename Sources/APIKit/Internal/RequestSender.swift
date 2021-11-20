@@ -124,9 +124,4 @@ class BearerRequestSender: RequestSender {
     func cancelNetworkRequest() {
         
     }
-    
-    
 }
-
-
-public struct APIKitVoid: APIModel {}
