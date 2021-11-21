@@ -16,7 +16,10 @@ public struct APIKitArrayResponse<Items: APIModel>: APIModel {
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         print("APIKIT: APIKitArrayResponse: container: ", container)
+        print("array response: ", try? container.decode([Items].self))
         items = try container.decode([Items].self)
+        
     }
+    
 }
 
