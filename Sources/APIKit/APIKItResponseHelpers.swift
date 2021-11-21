@@ -13,7 +13,7 @@ public struct APIKitVoid: APIModel {}
 public struct APIKitArrayResponse<Items: APIModel>: APIModel {
     let items: [Items]
     
-    public init(from decder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         items = try container.decode([Items].self)
     }
