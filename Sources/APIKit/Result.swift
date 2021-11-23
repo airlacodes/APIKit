@@ -11,7 +11,17 @@ import Foundation
 public enum Result<Value: APIModel, APIError> {
     case success(value: Value)
     case failure(error: Error)
+
+    public func successValue() -> Value? {
+        if case .success(let value) = self {
+            return value
+        }
+        
+        return nil
+    }
 }
+
+
 
 internal enum NetworkResult {
     case success(_ : Data)

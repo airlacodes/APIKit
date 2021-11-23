@@ -11,7 +11,7 @@ import Foundation
 public struct APIKitVoid: APIModel {}
 
 public struct APIKitArrayResponse<Items: APIModel>: APIModel {
-    let items: [Items]
+    public let items: [Items]
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
