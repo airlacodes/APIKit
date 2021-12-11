@@ -61,11 +61,8 @@ With APIKit you can statically declare your API for the contract that it is.
 struct API {
 
     static func getPost(id: Int) -> APICall<Post> {
-        return APICall<Post>(endpoint: getPostEndpoint(id: id))
-    }
-
-    private static func getPostEndpoint(id: Int) -> Endpoint {
-        return Endpoint(path: "https://jsonplaceholder.typicode.com/posts/\(id)", method: .get)
+        let postEndpoint = Endpoint(path: "https://jsonplaceholder.typicode.com/posts/\(id)", method: .get)
+        return APICall<Post>(endpoint: postEndpoint)
     }
 }
 ```
