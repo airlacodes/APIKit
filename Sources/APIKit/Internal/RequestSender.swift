@@ -107,14 +107,13 @@ class BearerRequestSender: RequestSender {
         }
         
         let task = urlSession.dataTask(with: request,
-                                       completionHandler: { [weak self](data, response, error) in
+                                       completionHandler: { (data, response, error) in
                                         if let error = error {
                                             callback(.failure(error))
                                         } else if let data = data {
-                                            self?.responseHandler.handle(response: response,
+                                            self.responseHandler.handle(response: response,
                                                                    data: data,
                                                                    completion: callback)
-                                            callback(.success(data))
                                         } else {
                                             callback(.failure(APIError.unexpectedError))
                                         }

@@ -30,14 +30,15 @@ open class APICall<ResponseModel: APIModel> {
         requestSender?.request(endpoint: self.endpoint, callback: { response in
             switch response {
             case .success(let data):
-                guard let res = try? JSONDecoder().decode(Response.self, from: data) else {
-                    callback(.failure(error: APIError.modelDecodingFailed(data: data)))
-                    return
-                }
+                do {
+                  let decodedResponse = try JSONDecoder().decode(Response.self, from: data)
+                  callback(Result.success(value: decodedResponse))
 
-                callback(Result.success(value: res))
+                } catch let error {
+                    callback(Result.failure(error: error))
+                }
+                
             case .failure(let error):
-                print("ERROR IN APICALL: ", error)
                 callback(Result.failure(error: error))
             }
         })
