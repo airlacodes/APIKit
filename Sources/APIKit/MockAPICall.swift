@@ -23,11 +23,11 @@ public class MockAPICall<T: APIModel>: APICall<T> {
         didCallExecute = true
     }
     
-    func triggerSuccess(_ value: T) {
+    public func triggerSuccess(_ value: T) {
         callback?(.success(value: value))
     }
     
-    func triggerFailure(_ error: Error) {
+    public func triggerFailure(_ error: Error) {
         callback?(.failure(error: error))
     }
 }
