@@ -17,7 +17,7 @@ open class APICall<ResponseModel: APIModel> {
         self.endpoint = endpoint
     }
 
-    open func execute(callback: @escaping (Result<Response, APIError>) -> Void) {
+    open func execute(callback: @escaping (Result<Response>) -> Void) {
         var requestSender: RequestSender?
         
         if(endpoint.authenticated) {
