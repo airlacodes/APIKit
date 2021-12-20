@@ -18,3 +18,12 @@ public struct APIKitArrayResponse<Items: APIModel>: APIModel {
         items = try container.decode([Items].self)
     }
 }
+
+public struct APIKitOptionalResponse<T: APIModel>: APIModel {
+    public let response: T?
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        response = try container.decode(T.self)
+    }
+}
