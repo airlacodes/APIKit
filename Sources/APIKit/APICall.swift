@@ -17,7 +17,7 @@ open class APICall<ResponseModel: APIModel> {
         self.endpoint = endpoint
     }
 
-    open func execute(callback: @escaping (Result<Response>) -> Void) {
+    open func rawDataResponse(dataCallback: @escaping (Result<APIKitVoid>) -> Void) {
         var requestSender: RequestSender?
         
         if(endpoint.authenticated) {
@@ -26,6 +26,24 @@ open class APICall<ResponseModel: APIModel> {
             requestSender = HTTPRequestSender()
         }
         
+        requestSender?.request(endpoint: self.endpoint, callback: { response in
+            switch response {
+            case .success(let data):
+                dataCallback(Result.success(value: APIKitVoid(data: data)))
+            case .failure(let error):
+                dataCallback(Result.failure(error: error))
+            }
+        })
+    }
+    
+    open func execute(callback: @escaping (Result<Response>) -> Void) {
+        var requestSender: RequestSender?
+        
+        if(endpoint.authenticated) {
+            requestSender = BearerRequestSender()
+        } else {
+            requestSender = HTTPRequestSender()
+        }
         
         requestSender?.request(endpoint: self.endpoint, callback: { response in
             switch response {

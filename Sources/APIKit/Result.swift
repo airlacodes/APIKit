@@ -11,7 +11,7 @@ import Foundation
 public enum Result<Value: APIModel> {
     case success(value: Value)
     case failure(error: Error)
-
+    
     public func successValue() -> Value? {
         if case .success(let value) = self {
             return value

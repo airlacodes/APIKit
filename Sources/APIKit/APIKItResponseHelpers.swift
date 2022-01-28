@@ -8,7 +8,9 @@
 
 import Foundation
 
-public struct APIKitVoid: APIModel {}
+public struct APIKitVoid: APIModel {
+    public let data: Data
+}
 
 public struct APIKitArrayResponse<Items: APIModel>: APIModel {
     public let items: [Items]
