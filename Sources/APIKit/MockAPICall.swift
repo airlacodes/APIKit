@@ -3,7 +3,6 @@
 //  APIKit
 //
 //  Created by Codeonomics on 17/12/2021.
-//  Copyright © 2021 Airla Tech Ltd. All rights reserved.
 //
 
 import Foundation
