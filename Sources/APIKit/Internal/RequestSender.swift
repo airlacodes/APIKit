@@ -78,7 +78,7 @@ class BearerRequestSender: RequestSender {
                 case .refreshed:
                     self.completeRequest(endpoint: endpoint, callback: callback)
                 case .refreshFailed:
-                    callback(.failure(APIError.unexpectedError))
+                    callback(.failure(APIError.unauthorised))
                 case .shouldRetry:
                     callback(.failure(APIError.unauthorised))
                 }

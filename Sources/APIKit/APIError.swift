@@ -9,7 +9,6 @@ import Foundation
 
 public enum APIError: Error {
     case unexpectedError
-    case forceLogout
     case unauthorised
     case modelDecodingFailed(data: Data)
     case responseError(object: Data)
