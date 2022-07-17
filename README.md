@@ -16,9 +16,9 @@ It utilises the the [codable](https://developer.apple.com/documentation/swift/co
 
 ## Example call
 
-Imagine we need to call [this example rest endpoint](https://jsonplaceholder.typicode.com/posts/1) and print the Post properties to the console.
+Imagine we need to call [this example rest endpoint for our new social media app](https://jsonplaceholder.typicode.com/posts/1) and print the Post properties to the console.
 
-Firstly, we create a Post struct that conforms to APIModel (allias for Codable) and the schema of the jsonplaceholder.typeicode.com response.
+Firstly, we create a Post struct that conforms to APIModel (allias for Codable) and the schema of the jsonplaceholder.typeicode.com response. (not to be confused with the POST HTTP Method, which is specified when declaring your API routes (endpoints)
 
 ```swift
 struct Post: APIModel {
