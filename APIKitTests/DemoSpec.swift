@@ -3,7 +3,6 @@
 //  APIKitTests
 //
 //  Created by Codeonomics on 25/06/2019.
-//  Copyright © 2019 Codeonomics.io All rights reserved.
 //
 
 import Foundation

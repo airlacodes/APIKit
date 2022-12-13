@@ -3,7 +3,6 @@
 //  APIKit
 //
 //  Created by Codeonomics on 16/06/2019.
-//  Copyright © 2019 Codeonomics.io All rights reserved.
 //
 
 import Foundation
@@ -79,7 +78,7 @@ class BearerRequestSender: RequestSender {
                 case .refreshed:
                     self.completeRequest(endpoint: endpoint, callback: callback)
                 case .refreshFailed:
-                    callback(.failure(APIError.unexpectedError))
+                    callback(.failure(APIError.unauthorised))
                 case .shouldRetry:
                     callback(.failure(APIError.unauthorised))
                 }
